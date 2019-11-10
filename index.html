@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head><title>DATA 608 Hw 5</title></head>
+<h1> Gurpreet Singh</h1>
+<h2> Data 608 Hw5 </h2>
+
+<body>
+<script type="text/javascript">
+document.write('<p><b>1. Create a function to reverse a string</b></p>')
+</script>
+
+<script type="text/javascript">
+// https://medium.com/sonyamoisset/reverse-a-string-in-javascript-a18027b8e91c
+function reverseString(input) {
+    return input.split("").reverse().join("");
+};
+function rev_str(){
+    var t = document.getElementById("target");
+    t.innerHTML = reverseString(document.getElementById('input').value);
+}
+</script>
+</body>
+
+<script type="text/javascript">
+function mult_create(num){
+// https://stackoverflow.com/questions/54193060/javascript-function-for-finding-multiples-of-a-number
+    array = [];
+    for (i = 1; i <= num; i++) {array.push(document.showMultiple.Input3.value * (1 * i))};
+    return array
+}
+function tbl_mult(input2){
+	var tbl = '<table>';
+	// https://stackoverflow.com/questions/22042161/creating-table-using-for-loop-in-javascript
+	for (i = 0; i < input2.length; i++){
+		if (i % 4 ==0){tbl= tbl +'<tr>'};
+        tbl = tbl + '<td>'+ input2[i]+ '</td>';
+    };
+    tbl = tbl + '</table>';
+    return tbl
+};
+function tbl_gen(){
+    var t = document.getElementById('target2');
+    t.innerHTML = tbl_mult(mult_create(20));
+}
+</script>
+
+<p>
+<form>
+    <input id="input" type="string">
+    <input type="button" value="Enter a number to reverse" onClick="rev_str();">
+</form>
+
+<p>
+<form name="showMultiple">
+    <input name="Input3" type="number">
+    <input type="button" value="Input number to create table of multiples" onClick="tbl_gen();">
+</form>
+</p>
+
+<div id="target"></div>
+<div id="target2"></div>
+
+</body>
+</html>
